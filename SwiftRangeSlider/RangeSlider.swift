@@ -59,10 +59,14 @@ import QuartzCore
     }
     
     ///The minimum accepted value. The slider will not move lower than this value
-    @IBInspectable open var minimumAcceptedValue: Double = minimumValue
+    @IBInspectable open lazy var minimumAcceptedValue: Double = {
+        minimumValue
+    }()
     
     ///The maximum accepted value. The slider will not move higher than this value
-    @IBInspectable open var maximumAcceptedValue: Double = maximumValue
+    @IBInspectable open lazy var maximumAcceptedValue: Double = {
+        maximumValue
+    }()
     
     ///The color of the track bar outside of the selected range
     @IBInspectable open var trackTintColor: UIColor = UIColor(white: 0.9, alpha: 1.0) {
